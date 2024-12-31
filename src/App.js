@@ -1,29 +1,49 @@
-import React from "react";
-import { Line, Bar, Area } from "recharts";
-import { ChartWrapper } from "./components/ChartWrapper";
-import { chartTheme } from "./constants/chartTheme";
+import React from 'react';
+import {
+  LineChartExample,
+  BarChartExample,
+  PieChartExample,
+  AreaChartExample,
+  ScatterChartExample,
+  RadarChartExample
+} from './ChartExamples';
 
-const data = [
-  { month: "Jan", sales: 1000, profit: 500 },
-  { month: "Feb", sales: 1500, profit: 700 },
-  { month: "Mar", sales: 1200, profit: 600 },
-];
+const App = () => {
+  const sampleData = [
+    { name: 'A', value: 400 },
+    { name: 'B', value: 300 },
+    { name: 'C', value: 500 },
+    { name: 'D', value: 200 },
+  ];
 
-export default App = () => {
+  const scatterData = [
+    { x: 100, y: 200 },
+    { x: 120, y: 100 },
+    { x: 170, y: 300 },
+    { x: 140, y: 250 },
+  ];
+
   return (
-    <ChartWrapper type="line" data={data} xAxisDataKey="month" height={400}>
-      <Line
-        type="monotone"
-        dataKey="sales"
-        stroke={chartTheme.colors[0]}
-        strokeWidth={2}
-      />
-      <Line
-        type="monotone"
-        dataKey="profit"
-        stroke={chartTheme.colors[1]}
-        strokeWidth={2}
-      />
-    </ChartWrapper>
+    <div style={{ padding: 20 }}>
+      <h2>Line Chart</h2>
+      <LineChartExample data={sampleData} />
+      
+      <h2>Bar Chart</h2>
+      <BarChartExample data={sampleData} />
+      
+      <h2>Pie Chart</h2>
+      <PieChartExample data={sampleData} />
+      
+      <h2>Area Chart</h2>
+      <AreaChartExample data={sampleData} />
+      
+      <h2>Scatter Chart</h2>
+      <ScatterChartExample data={scatterData} />
+      
+      <h2>Radar Chart</h2>
+      <RadarChartExample data={sampleData} />
+    </div>
   );
 };
+
+export default App;

@@ -1,16 +1,22 @@
 export const chartTheme = {
   colors: [
-    "#2563eb", // primary blue
-    "#16a34a", // green
-    "#dc2626", // red
-    "#9333ea", // purple
-    "#ea580c", // orange
-    "#0891b2", // cyan
+    '#2196F3',
+    '#4CAF50',
+    '#FF9800',
+    '#E91E63',
+    '#9C27B0',
+    '#00BCD4',
+    '#FFC107'
   ],
-  fontFamily: '"Inter", sans-serif',
+  fontFamily: 'Arial, sans-serif',
   fontSize: 12,
-  gridColor: "#e5e7eb",
-  tooltipBackground: "#ffffff",
-  tooltipBorder: "#e5e7eb",
-  legendColor: "#4b5563",
+  axisColor: '#666666',
+  gridColor: '#EEEEEE',
+  tooltipBackground: 'rgba(255, 255, 255, 0.9)',
+  tooltipBorder: '#CCCCCC'
 };
+
+export const getChartStyle = (index) => ({
+  fill: chartTheme.colors[index % chartTheme.colors.length],
+  stroke: chartTheme.colors[index % chartTheme.colors.length]
+});
